@@ -1,0 +1,19 @@
+# Ignorar el entorno virtual dentro de backend
+backend/venv/
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Ignorar la base de datos SQLite
+db.sqlite3
+
+# Ignorar variables de entorno y configuraciones sensibles
+.env
+
+# Ignorar dependencias de Node.js (para React/Vue)
+node_modules/
+
+# Ignorar archivos de macOS
+.DS_Store
+

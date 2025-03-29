@@ -1,0 +1,127 @@
+/* Sidebar general */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: #1e293b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Colapsar Sidebar */
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  /* Botón de colapso/expansión */
+  .sidebar-toggle {
+    padding: 12px;
+    cursor: pointer;
+    text-align: center;
+    color: #e5e7eb;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .sidebar-toggle:hover {
+    background-color: #374151;
+  }
+  
+  /* Encabezado del Sidebar */
+  .sidebar-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4f46e5;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Lista de menú */
+  .sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  .sidebar-item {
+    margin-bottom: 0.5rem;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  
+  /* Íconos de menú */
+  .sidebar-link svg {
+    margin-right: 12px;
+    font-size: 18px;
+    transition: margin 0.3s ease-in-out;
+  }
+  
+  /* Estilos cuando está colapsado */
+  .sidebar.collapsed .sidebar-link svg {
+    margin-right: 0;
+  }
+  
+  .sidebar.collapsed .sidebar-link span {
+    display: none;
+  }
+  
+  /* Colores al pasar el mouse */
+  .sidebar-link:hover {
+    background-color: #374151;
+    color: #ffffff;
+  }
+  
+  /* Elemento activo */
+  .sidebar-item.active {
+    background-color: #4f46e5;
+    border-left: 4px solid #fff;
+  }
+  
+  .sidebar-item.active .sidebar-link {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  /* Footer del Sidebar */
+  .sidebar-footer {
+    padding: 1rem;
+    background-color: #111827;
+    text-align: center;
+  }
+  
+  .sidebar-footer p {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Botón de Cerrar Sesión */
+  .btn-logout {
+    width: 100%;
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-logout:hover {
+    background-color: #dc2626;
+  }
+  

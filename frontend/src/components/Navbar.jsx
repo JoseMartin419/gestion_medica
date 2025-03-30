@@ -56,6 +56,7 @@ const navItems = [
   { label: 'Pagos', path: '/pagos', icon: <PaymentsIcon /> },
   { label: 'Recetas', path: '/recetas', icon: <ReceiptIcon /> },
   { label: 'Usuarios', path: '/usuarios', icon: <PersonIcon /> },
+  { label: 'Lista Extra', path: '/lista-extra', icon: <NoteAddIcon /> },
 ];
 
 const Navbar = () => {

@@ -1,11 +1,16 @@
+// src/App.jsx
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-
 import CitasPage from "./pages/CitasPage";
 import ConsultasPage from "./pages/ConsultasPage";
 import ExpedientesPage from "./pages/ExpedientesPage";
@@ -15,9 +20,9 @@ import PagosPage from "./pages/PagosPage";
 import RecetasPage from "./pages/RecetasPage";
 import UsuariosPage from "./pages/UsuariosPage";
 import NuevaConsulta from "./pages/NuevaConsulta";
-
 import PatientForm from "./components/PatientForm";
 import PatientList from "./components/PatientList";
+import ListaPacientesExtra from "./components/listaPacientesExtra";
 
 function App() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -35,19 +40,26 @@ function App() {
   );
 }
 
-function MainContent({ isFormSubmitted, setIsFormSubmitted, isCollapsed, setIsCollapsed }) {
+function MainContent({
+  isFormSubmitted,
+  setIsFormSubmitted,
+  isCollapsed,
+  setIsCollapsed,
+}) {
   const location = useLocation();
 
   return (
     <div className="app-container">
       <Navbar />
       <div className={`main-container ${isCollapsed ? "collapsed" : ""}`}>
-        {/* Pasar el estado a Sidebar */}
-        
         <div className="content">
           {/* Transiciones suaves entre rutas */}
           <TransitionGroup>
-            <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
+            <CSSTransition
+              key={location.pathname}
+              classNames="fade"
+              timeout={300}
+            >
               <Routes location={location}>
                 {/* Página principal con formulario */}
                 <Route
@@ -69,6 +81,10 @@ function MainContent({ isFormSubmitted, setIsFormSubmitted, isCollapsed, setIsCo
                 <Route path="/pagos" element={<PagosPage />} />
                 <Route path="/recetas" element={<RecetasPage />} />
                 <Route path="/usuarios" element={<UsuariosPage />} />
+                <Route path="/lista-extra" element={<ListaPacientesExtra />} /> {/* ✅ Ruta de Lista Extra */}
+
+                {/* Nueva ruta para ListaPacientesExtra */}
+                <Route path="/lista-extra" element={<ListaPacientesExtra />} />
               </Routes>
             </CSSTransition>
           </TransitionGroup>

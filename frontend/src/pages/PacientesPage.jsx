@@ -1,3 +1,4 @@
+// src/components/PacientesPage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
@@ -7,11 +8,12 @@ import {
   getPaginationRowModel,
   flexRender,
 } from '@tanstack/react-table';
-import './PacientesPage.css';  // Archivo de estilos
+import './PacientesPage.css'; // Archivo de estilos
 
 const PacientesPage = () => {
   const [consultas, setConsultas] = useState([]);
 
+  // Obtener los datos de la API
   useEffect(() => {
     axios
       .get('http://localhost:8000/api/consultas/')
@@ -88,7 +90,9 @@ const PacientesPage = () => {
           {table.getRowModel().rows.map((row) => (
             <tr key={row.id}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
               ))}
             </tr>
           ))}
